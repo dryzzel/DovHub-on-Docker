@@ -1,0 +1,40 @@
+services:
+  # DOV-HUB Service
+  - type: web
+    name: dov-hub
+    runtime: node
+    rootDir: DOV-HUB-main
+    buildCommand: npm install
+    startCommand: node index.js
+    envVars:
+      - key: MONGODB_URI
+        sync: false
+      - key: SESSION_SECRET
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: PORT
+        value: 10000
+
+  # Agent Center Service
+  - type: web
+    name: agent-center
+    runtime: node
+    rootDir: "Agent Center V1"
+    buildCommand: npm install && npm run build
+    startCommand: npm start
+    envVars:
+      - key: MONGO_URI
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: RC_CLIENT_ID
+        sync: false
+      - key: RC_CLIENT_SECRET
+        sync: false
+      - key: RC_SERVER_URL
+        sync: false
+      - key: RC_JWT
+        sync: false
+      - key: PORT
+        value: 10000

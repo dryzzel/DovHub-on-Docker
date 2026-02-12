@@ -1,0 +1,24 @@
+services:
+  dov-hub:
+    build: ./DOV-HUB-main
+    container_name: dov-hub
+    ports:
+      - "3000:3000"
+    env_file:
+      - ./DOV-HUB-main/.env
+    networks:
+      - app-network
+
+  agent-center:
+    build: "./Agent Center V1"
+    container_name: agent-center
+    ports:
+      - "3001:3000"
+    env_file:
+      - "./Agent Center V1/.env"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
