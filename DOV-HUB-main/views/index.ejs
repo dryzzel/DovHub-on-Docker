@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOV HUB</title>
+    <link rel="icon" href="DOV Icon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div class="video-container">
+        <video autoplay muted loop playsinline id="bg-video">
+            <source src="bgvid.mp4" type="video/mp4">
+        </video>
+        <div class="video-overlay"></div>
+    </div>
+
+    <nav class="sidebar">
+        <div class="nav-item active">
+            <i class="fa-solid fa-layer-group"></i>
+            <ul class="submenu">
+                <li><a href="https://dovmarketing.com/Switcher/index.html" target="_blank">Switcher</a></li>
+                <li><a href="https://agentcenter.onrender.com/" target="_blank">Agent Center</a></li>
+                <li><a href="https://dovmarketing.com/Nexus/chat.html" target="_blank">Nexus AI</a></li>
+            </ul>
+        </div>
+        <div class="nav-item">
+            <i class="fa-solid fa-headset"></i>
+            <ul class="submenu">
+                <li><a href="https://login.five9.com/" target="_blank">Five9</a></li>
+                <li><a href="https://app.ringcentral.com/login" target="_blank">RingCentral</a></li>
+            </ul>
+        </div>
+        <div class="nav-item">
+            <i class="fa-solid fa-file-pen"></i>
+            <ul class="submenu">
+                <li><a href="https://www1.marketsharpm.com/ContactDetail.aspx?contactType=3&contactOid=e38af6d6-d1a0-41ee-9558-afbd042a682c"
+                        target="_blank">USA Windows</a></li>
+                <li><a href="https://ps16a.leadperfection.com/" target="_blank">Locktight</a></li>
+                <li><a href="https://c1tva.leadperfection.com/" target="_blank">Prestige</a></li>
+            </ul>
+        </div>
+        <div class="nav-item">
+            <i class="fa-solid fa-chart-simple"></i>
+            <ul class="submenu">
+                <li><a href="https://dovmarketing.com/Leaderboard/leaderboard.html" target="_blank">Leaderboard</a></li>
+                <li><a href="https://dovmarketing.com/Stats/count.html" target="_blank">Stats Counter</a></li>
+            </ul>
+        </div>
+
+        <% if (canViewManagement) { %>
+            <div class="nav-item">
+                <i class="fa-solid fa-users"></i>
+                <ul class="submenu">
+                    <li><a href="https://dovmarketing.com/Ark/index.html" target="_blank">Ark</a></li>
+                    <li>Users</li>
+                    <li>Settings</li>
+                    <% if (isAdmin) { %>
+                        <li><a href="/admin">Admin Panel</a></li>
+                        <% } %>
+                </ul>
+            </div>
+            <% } %>
+
+                <a href="/logout" class="nav-item">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <ul class="submenu">
+                        <li>Logout</li>
+                    </ul>
+                </a>
+    </nav>
+
+    <div class="main-container">
+
+        <header class="top-header">
+            <div></div>
+            <div class="logo-container">
+                <img src="DOVHUB-01.png" alt="DOV HUB Logo" class="main-logo">
+            </div>
+
+            <div class="top-icons">
+                <a href="https://dovmarketing.com" target="_blank"><i class="fa-solid fa-globe"></i></a>
+                <a href="https://discord.gg/8aE9Jfnc" target="_blank"><i class="fa-brands fa-discord"></i></a>
+            </div>
+        </header>
+
+        <div class="glass-panel">
+
+            <div class="panel-top">
+                <div class="avatar-container">
+                    <img src="https://i.pravatar.cc/150?img=11" alt="Profile">
+                </div>
+
+                <div class="greeting-box">
+                    <div class="greeting-label">Announcements</div>
+                    <div class="greeting-pill">Good morning, <%= typeof fullName !=='undefined' ?
+                            fullName.split(' ')[0] : ' User' %>!</div>
+                </div>
+            </div>
+
+            <div class="help-tab">
+                <span>Need something? Let me know!</span>
+                <i class="fa-regular fa-comments"></i>
+            </div>
+
+            <div class="panel-bottom">
+
+                <div class="user-details">
+                    <p>User: <strong>
+                            <%= typeof user !=='undefined' ? user : 'Loading...' %>
+                        </strong></p>
+                    <p>Full Name: <strong>
+                            <%= typeof fullName !=='undefined' ? fullName : 'Loading...' %>
+                        </strong></p>
+                    <p>Team: <strong>
+                            <%= typeof team !=='undefined' ? team : 'General' %>
+                        </strong></p>
+                    <p>Rank: <strong>
+                            <%= typeof rank !=='undefined' ? rank : 'Staff' %>
+                        </strong></p>
+                    <p>Code: <strong>
+                            <%= typeof code !=='undefined' ? code : '000' %>
+                        </strong></p>
+                </div>
+
+                <div class="bottom-right-area">
+                    <div class="notes-header">Real time notes</div>
+                    <div class="notes-box">
+                        <div class="notes-content">
+                            <p>Workplan for today is Five9 till 4pm.</p>
+                            <br>
+                            <p>- Remember to check callbacks</p>
+                        </div>
+                    </div>
+
+                    <div class="action-buttons">
+                        <button class="btn-pill"><span class="dot"></span> CRMs credentials</button>
+                        <button class="btn-pill"><span class="dot"></span> Dialers credentials</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+
+</html>

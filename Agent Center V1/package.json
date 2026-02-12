@@ -1,0 +1,38 @@
+{
+  "name": "dov-agent-backend",
+  "version": "1.0.0",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "build": "webpack",
+    "migrate": "node migrate-users.js",
+    "migrate-leads": "node migrate-leads.js"
+  },
+  "dependencies": {
+    "@ringcentral/sdk": "^5.0.5",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "csv-parser": "^3.2.0",
+    "dotenv": "^17.2.3",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "express-rate-limit": "^8.2.0",
+    "fs-extra": "^11.2.0",
+    "helmet": "^8.1.0",
+    "html-minifier": "^4.0.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongodb": "^7.0.0",
+    "multer": "^2.0.2",
+    "socket.io": "^4.8.1",
+    "socket.io-client": "^4.8.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "devDependencies": {
+    "webpack": "^5.104.1",
+    "webpack-cli": "^6.0.1",
+    "webpack-obfuscator": "^3.6.0"
+  }
+}

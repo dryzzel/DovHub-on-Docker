@@ -1,0 +1,67 @@
+<div id="adminEditLeadModal" class="modal-overlay" style="display: none;">
+    <div class="modal-content" style="max-width: 900px; width: 95%; max-height: 90vh; overflow-y: auto;">
+        <h2 class="section-title"><i data-feather="edit-2"></i> Edit Lead</h2>
+        <input type="hidden" id="editLeadId">
+
+        <div class="form-grid">
+            <div>
+                <label class="form-label">Name</label>
+                <input type="text" id="editLeadName" class="form-input">
+            </div>
+            <div>
+                <label class="form-label">Phone</label>
+                <input type="text" id="editLeadPhone" class="form-input">
+            </div>
+            <div>
+                <label class="form-label">Email</label>
+                <input type="text" id="editLeadEmail" class="form-input">
+            </div>
+            <div>
+                <label class="form-label">Product</label>
+                <input type="text" id="editLeadProduct" class="form-input">
+            </div>
+            <div>
+                <label class="form-label">Disposition</label>
+                <select id="editLeadDisposition" class="form-input">
+                    <option value="">-- No Disposition --</option>
+                    <option value="Sale">Sale</option>
+                    <option value="Cancelled Sale">Cancelled Sale</option>
+                    <option value="Callback">Callback</option>
+                    <option value="NA">NA - No Answer</option>
+                    <option value="VM">VM - Voicemail</option>
+                    <option value="DC">DC - Disconnected</option>
+                    <option value="WN">WN - Wrong Number</option>
+                    <option value="NI">NI - Not Interested</option>
+                    <option value="DNC">DNC - Do Not Call</option>
+                    <option value="FUTURE">Future Lead</option>
+                    <option value="ND/SD">Next Day / Same Day</option>
+                </select>
+            </div>
+            <div>
+                <label class="form-label">Prev. Company</label>
+                <input type="text" id="editLeadPrevCompany" class="form-input">
+            </div>
+            <div style="grid-column: 1 / -1;">
+                <label class="form-label">List Name</label>
+                <input type="text" id="editLeadListName" class="form-input">
+            </div>
+            <div style="grid-column: 1 / -1;">
+                <label class="form-label">Address</label>
+                <input type="text" id="editLeadAddress" class="form-input">
+            </div>
+        </div>
+
+        <div style="margin-top: 24px;">
+            <h3 class="panel-subtitle"><i data-feather="clock"></i> History</h3>
+            <div id="adminLeadHistoryList"
+                style="max-height: 200px; overflow-y: auto; background: var(--bg); border: 1px solid var(--border); padding: 10px; border-radius: 6px;">
+                <p style="text-align:center; color:var(--subtext);">No history available</p>
+            </div>
+        </div>
+
+        <div class="modal-actions" style="margin-top: 20px;">
+            <button id="saveLeadChangesBtn" class="login-btn"><i data-feather="save"></i> Save Changes</button>
+            <button id="closeAdminEditModalBtn" class="login-btn secondary-btn"><i data-feather="x"></i> Close</button>
+        </div>
+    </div>
+</div>

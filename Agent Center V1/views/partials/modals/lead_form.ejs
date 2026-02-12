@@ -1,0 +1,157 @@
+<div id="leadFormModal" class="modal-overlay" style="display: none;">
+    <div class="modal-content" style="max-width: 700px; max-height: 90vh; overflow-y: auto;">
+        <h2 class="section-title"><i data-feather="clipboard"></i> Lead Format</h2>
+        <div class="form-grid">
+            <div>
+                <label class="form-label">Company</label>
+                <select id="formCompany" class="form-input">
+                    <option value="USA Windows & Doors">USA Windows & Doors</option>
+                    <option value="FHIA Remodeling">FHIA Remodeling</option>
+                    <option value="Prestige Windows & Doors">Prestige Windows & Doors</option>
+                    <option value="LockTight">LockTight</option>
+                    <option value="Reece Windows">Reece Windows</option>
+                    <option value="Best Price Contractors">Best Price Contractors</option>
+                    <option value="Factory Direct Renovations">Factory Direct Renovations</option>
+                    <option value="Bilantar Windows">Bilantar Windows</option>
+                </select>
+            </div>
+            <div>
+                <label class="form-label">Team</label>
+                <select id="formTeam" class="form-input">
+                    <option value="Alpha">Alpha</option>
+                    <option value="Beta">Beta</option>
+                    <option value="Gamma">Gamma</option>
+                    <option value="Delta">Delta</option>
+                    <option value="Epsilon">Epsilon</option>
+                    <option value="Zeta">Zeta</option>
+                    <option value="Eta">Eta</option>
+                    <option value="Theta">Theta</option>
+                    <option value="Iota">Iota</option>
+                    <option value="Kappa">Kappa</option>
+                </select>
+            </div>
+            <div>
+                <label class="form-label">Agent Code</label>
+                <input type="text" id="formAgentCode" class="form-input">
+            </div>
+            <div>
+                <label class="form-label">Full Name</label>
+                <input type="text" id="formFullName" class="form-input">
+            </div>
+            <div>
+                <label class="form-label">Phone Number</label>
+                <input type="text" id="formPhone" class="form-input">
+            </div>
+            <div>
+                <label class="form-label">Language</label>
+                <select id="formLanguage" class="form-input">
+                    <option value="English">English</option>
+                    <option value="Spanish">Spanish</option>
+                    <option value="Bilingual">Bilingual</option>
+                </select>
+            </div>
+            <div>
+                <label class="form-label">Marital Status</label>
+                <select id="formMaritalStatus" class="form-input">
+                    <option value="Married">Married</option>
+                    <option value="Single">Single</option>
+                    <option value="Widow/er">Widow/er</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            <div>
+                <label class="form-label">Address</label>
+                <input type="text" id="formAddress" class="form-input">
+            </div>
+            <div style="grid-column: 1 / -1;">
+                <label class="form-label">Product</label>
+                <div id="formProductsContainer">
+                    <!-- Dynamic products will be added here -->
+                </div>
+                <button id="addProductBtn" class="small-btn" style="width: auto; margin-top: 8px;"><i
+                        data-feather="plus"></i>
+                    Add Product</button>
+            </div>
+            <div>
+                <label class="form-label">Appt. Date & Time</label>
+                <div style="display: flex; gap: 4px; align-items: center;">
+                    <input type="text" id="formApptMonth" class="form-input" placeholder="MM"
+                        style="width: 50px; text-align: center;">
+                    <span style="font-weight: bold; color: var(--subtext);">/</span>
+                    <input type="text" id="formApptDay" class="form-input" placeholder="DD"
+                        style="width: 50px; text-align: center;">
+                    <span style="font-weight: bold; color: var(--subtext);">@</span>
+                    <input type="text" id="formApptHour" class="form-input" placeholder="HH"
+                        style="width: 50px; text-align: center;">
+                    <select id="formApptAmPm" class="form-input" style="width: 70px;">
+                        <option value="am">am</option>
+                        <option value="pm">pm</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <label class="form-label">Conf. by</label>
+                <input type="text" id="formConfBy" class="form-input">
+            </div>
+            <div style="grid-column: 1 / -1;">
+                <label class="form-label">Master Notes</label>
+                <textarea id="formMasterNotes" class="form-input" rows="3"></textarea>
+            </div>
+            <div style="grid-column: 1 / -1;">
+                <label class="form-label">CRM Notes</label>
+                <textarea id="formCrmNotes" class="form-input" rows="3"></textarea>
+            </div>
+            <div>
+                <label class="form-label">VA Tag</label>
+                <input type="text" id="formVaTag" class="form-input">
+            </div>
+            <div>
+                <label class="form-label">Lead Quality (1-5)</label>
+                <select id="formLeadQuality" class="form-input">
+                    <option value="1">1 *</option>
+                    <option value="2">2 **</option>
+                    <option value="3">3 ***</option>
+                    <option value="4">4 ****</option>
+                    <option value="5">5 *****</option>
+                </select>
+            </div>
+            <div>
+                <label class="form-label">Source</label>
+                <select id="formSource" class="form-input">
+                    <option value="Propstream">Propstream</option>
+                    <option value="Main Campaign Trainees">Main Campaign Trainees</option>
+                    <option value="2 Months+">2 Months+</option>
+                    <option value="CPR">CPR</option>
+                    <option value="Own-Leads Follow-Up">Own-Leads Follow-Up</option>
+                    <option value="Dispos Auto">Dispos Auto</option>
+                    <option value="Dispos Manual">Dispos Manual</option>
+                    <option value="Call Backs">Call Backs</option>
+                    <option value="Dispos SFL">Dispos SFL</option>
+                    <option value="Dispos Rest">Dispos Rest</option>
+                    <option value="Other">Other</option>
+                    <option value="Prestige + SFW">Prestige + SFW</option>
+                    <option value="Cancelled Sales">Cancelled Sales</option>
+                    <option value="Pre Leads">Pre Leads</option>
+                    <option value="Locktight Auto">Locktight Auto</option>
+                    <option value="Locktight Manual">Locktight Manual</option>
+                    <option value="FHIA Lists">FHIA Lists</option>
+                    <option value="CE">CE</option>
+                </select>
+            </div>
+            <div>
+                <label class="form-label">Lead Status</label>
+                <select id="formLeadStatus" class="form-input">
+                    <option value="Next Day">Next Day</option>
+                    <option value="Same Day">Same Day</option>
+                    <option value="2 Days Out">2 Days Out</option>
+                    <option value="Future">Future</option>
+                    <option value="REGISTER">REGISTER</option>
+                </select>
+            </div>
+        </div>
+        <div class="modal-actions">
+            <button id="copyFormBtn" class="login-btn"><i data-feather="copy"></i> Copy to Clipboard</button>
+            <button id="closeFormModalBtn" class="login-btn secondary-btn"><i data-feather="x"></i> Close</button>
+        </div>
+    </div>
+</div>

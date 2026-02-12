@@ -1,0 +1,104 @@
+<div id="appScreen" class="screen">
+    <div id="leftPanel">
+        <h3 class="panel-title"><i data-feather="bar-chart-2"></i> Control Panel</h3>
+
+        <div id="navigationContainer" style="display:none;">
+            <h3 class="panel-subtitle"><i data-feather="navigation"></i> Navigation</h3>
+            <div style="margin-bottom: 12px;">
+                <input type="search" id="searchInput" class="form-input" placeholder="🔍 Search in list...">
+            </div>
+            <input type="number" id="rowInput" placeholder="Row number" min="1" />
+            <button id="goToRowBtn">Go to row</button>
+            <div class="current-position" id="currentPosition">-</div>
+
+            <div class="checkbox-container">
+                <input type="checkbox" id="autoNextCheckbox" />
+                <label for="autoNextCheckbox" class="checkbox-label">Auto-advance</label>
+            </div>
+
+            <div class="checkbox-container">
+                <input type="checkbox" id="autoCallCheckbox" />
+                <label for="autoCallCheckbox" class="checkbox-label">Auto-call</label>
+            </div>
+        </div>
+
+        <div id="counterContainer" style="display:none;">
+            <h3 class="panel-subtitle"><i data-feather="activity"></i> Session Stats</h3>
+            <div id="counters"></div>
+        </div>
+
+        <h3 class="panel-subtitle"><i data-feather="book-open"></i> History</h3>
+        <div id="history">No records yet.</div>
+        <div class="button-group">
+            <button id="clearHistoryBtn" class="small-btn danger-btn"><i data-feather="trash-2"></i> Clear
+                History</button>
+            <button id="clearDispositionBtn" class="small-btn danger-btn" style="display:none;"><i
+                    data-feather="trash"></i>
+                Clear Stats</button>
+            <button id="logoutBtn" class="small-btn"><i data-feather="log-out"></i> Logout</button>
+        </div>
+    </div>
+
+    <div id="main">
+        <div id="dataContainer" style="display:none;"></div>
+        <div id="controls" style="display:none;">
+            <button id="prevBtn" title="Previous"><i data-feather="arrow-left"></i></button>
+            <button id="nextBtn" title="Next"><i data-feather="arrow-right"></i></button>
+
+            <button id="exportSummaryBtn" title="Export Summary"><i data-feather="file-text"></i></button>
+            <button id="toggleFilterBtn" title="Show Filters"><i data-feather="filter"></i></button>
+            <button id="toggleCallbacksBtn" title="Show Callbacks"><i data-feather="phone"></i></button>
+            <button id="viewHistoryBtn" title="View History"><i data-feather="clock"></i></button>
+            <button id="openFormBtn" class="success-btn" title="Fill Format"
+                style="border-radius: 50%; width: 56px; height: 56px; display: flex; align-items: center; justify-content: center; padding: 0;"><i
+                    data-feather="clipboard"></i></button>
+        </div>
+    </div>
+
+    <div id="rightPanel">
+        <div class="filter-section">
+            <h3 class="panel-subtitle"><i data-feather="filter"></i> Filters</h3>
+            <div class="filter-options-container" style="margin-bottom: 15px;">
+                <div style="margin-bottom: 10px;">
+                    <label style="font-size: 0.9em; font-weight: 600; color: var(--text);">Campaign / List</label>
+                    <select id="filterList" class="form-input" style="padding: 6px;">
+                        <option value="">All Lists</option>
+                    </select>
+                </div>
+                <div style="margin-bottom: 10px;">
+                    <label style="font-size: 0.9em; font-weight: 600; color: var(--text);">Custom ID</label>
+                    <select id="filterCustomId" class="form-input" style="padding: 6px;">
+                        <option value="">All Custom IDs</option>
+                    </select>
+                </div>
+            </div>
+            <div class="filter-options" id="filterOptions">
+                <p style="text-align:center; color:var(--subtext);">No dispositions</p>
+            </div>
+            <div class="filter-stats" id="filterStats">Showing: 0 of 0</div>
+            <div class="filter-actions">
+                <button id="applyFilterBtn" class="filter-btn"><i data-feather="check"></i> Apply Filter</button>
+                <button id="selectAllBtn" class="filter-btn secondary"><i data-feather="check-square"></i> Select
+                    All</button>
+                <button id="clearFilterBtn" class="filter-btn secondary"><i data-feather="x-square"></i> Clear
+                    Filter</button>
+                <button id="hideFilterBtn" class="filter-btn secondary"><i data-feather="eye-off"></i> Hide</button>
+            </div>
+        </div>
+
+        <div class="filter-section">
+            <h3 class="panel-subtitle"><i data-feather="users"></i> Filtered Contacts</h3>
+            <div id="filteredContactsList" style="max-height: 400px; overflow-y: auto;">
+                <p style="text-align: center; color: var(--subtext);">No filtered contacts</p>
+            </div>
+        </div>
+
+        <div class="filter-section">
+            <h3 class="panel-subtitle"><i data-feather="phone-call"></i> Pending Callbacks</h3>
+            <button id="exportCallbacksBtn" class="small-btn"><i data-feather="download"></i> Export</button>
+            <div id="callbacksList" style="max-height: 400px; overflow-y: auto;">
+                <p style="text-align: center; color: var(--subtext);">No pending callbacks</p>
+            </div>
+        </div>
+    </div>
+</div>

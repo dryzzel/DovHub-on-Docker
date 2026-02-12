@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - DOV HUB</title>
+    <link rel="stylesheet" href="admin.css">
+    <link rel="icon" href="DOV Icon.ico">
+</head>
+
+<body>
+    <div id="adminContainer">
+        <div class="admin-header">
+            <h1>User Management Panel</h1>
+            <div class="header-actions">
+                <input type="text" id="searchInput" placeholder="Search users..." class="search-input">
+                <button id="createUserBtn" class="btn-primary">+ Add New User</button>
+                <a href="/index" class="btn-secondary">← Back to Hub</a>
+            </div>
+        </div>
+
+        <div id="loadingSpinner" class="loading-spinner" style="display: none;">
+            <div class="spinner"></div>
+            <p>Loading...</p>
+        </div>
+
+        <div id="usersTableContainer">
+            <table id="usersTable">
+                <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Full Name</th>
+                        <th>Email</th>
+                        <th>Team</th>
+                        <th>Rank</th>
+                        <th>Status</th>
+                        <th>RC Extension</th>
+                        <th>Code</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="usersTableBody">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="userModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Create User</h2>
+                <span class="close">&times;</span>
+            </div>
+            <form id="userForm">
+                <input type="hidden" id="userId">
+
+                <div class="form-group">
+                    <label for="username">Username *</label>
+                    <input type="text" id="username" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password <span id="passwordOptional" style="display:none;">(leave blank to
+                            keep current)</span></label>
+                    <input type="password" id="password">
+                </div>
+
+                <div class="form-group">
+                    <label for="fullName">Full Name</label>
+                    <input type="text" id="fullName">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email">
+                </div>
+
+                <div class="form-group">
+                    <label for="team">Team</label>
+                    <input type="text" id="team">
+                </div>
+
+                <div class="form-group">
+                    <label for="rank">Rank</label>
+                    <select id="rank">
+                        <option value="Agent">Agent</option>
+                        <option value="TL">TL</option>
+                        <option value="SubTL">SubTL</option>
+                        <option value="Manager">Manager</option>
+                        <option value="Admin">Admin</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="status">Status</label>
+                    <select id="status">
+                        <option value="Active">Active</option>
+                        <option value="Inactive">Inactive</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="rcExtension">RingCentral Extension</label>
+                    <input type="text" id="rcExtension" placeholder="e.g., 101">
+                </div>
+
+                <div class="form-group">
+                    <label for="code">Code</label>
+                    <input type="text" id="code" placeholder="000">
+                </div>
+
+                <div class="modal-actions">
+                    <button type="submit" class="btn-primary">Save</button>
+                    <button type="button" class="btn-secondary" id="cancelBtn">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="deleteModal" class="modal">
+        <div class="modal-content modal-small">
+            <div class="modal-header">
+                <h2>⚠️ Confirm Deletion</h2>
+                <span class="close-delete">&times;</span>
+            </div>
+            <p>Are you sure you want to delete user <strong id="deleteUsername"></strong>?</p>
+            <p class="warning-text">This action cannot be undone.</p>
+            <div class="modal-actions">
+                <button id="confirmDeleteBtn" class="btn-danger">Delete</button>
+                <button id="cancelDeleteBtn" class="btn-secondary">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="notification" class="notification"></div>
+
+    <script src="admin.js"></script>
+</body>
+
+</html>

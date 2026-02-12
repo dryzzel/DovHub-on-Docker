@@ -1,0 +1,33 @@
+<div id="editUserModal" class="modal-overlay" style="display: none;">
+    <div class="modal-content">
+        <h2 class="section-title"><i data-feather="edit"></i> Edit User</h2>
+        <input type="hidden" id="editUserId">
+        <div>
+            <label class="form-label">Username</label>
+            <input type="text" id="editUserUsername" class="form-input">
+        </div>
+        <div style="margin-top: 16px;">
+            <label class="form-label">Password</label>
+            <input type="password" id="editUserPassword" class="form-input" placeholder="Leave blank to keep current">
+        </div>
+        <div style="margin-top: 16px;">
+            <label class="form-label">User ID</label>
+            <input type="text" id="editUserEmail" class="form-input" placeholder="User ID">
+        </div>
+        <div style="margin-top: 16px;">
+            <label class="form-label">RingCentral Extension ID</label>
+            <input type="text" id="editUserRcExtensionId" class="form-input" placeholder="e.g. 101">
+        </div>
+        <div style="margin-top: 16px;">
+            <label class="form-label">Role</label>
+            <select id="editUserRole" class="form-input">
+                <option value="agent">Agent</option>
+                <option value="admin">Admin</option>
+            </select>
+        </div>
+        <div class="modal-actions">
+            <button id="saveUserChangesBtn" class="login-btn"><i data-feather="save"></i> Save Changes</button>
+            <button id="closeModalBtn" class="login-btn secondary-btn"><i data-feather="x"></i> Cancel</button>
+        </div>
+    </div>
+</div>

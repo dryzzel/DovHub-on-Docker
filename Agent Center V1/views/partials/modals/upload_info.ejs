@@ -1,0 +1,28 @@
+<div id="uploadInfoModal" class="modal-overlay" style="display: none;">
+    <div class="modal-content" style="max-width: 600px;">
+        <h2 class="section-title"><i data-feather="info"></i> CSV Format Requirements</h2>
+        <div style="margin-bottom: 20px; text-align: left;">
+            <p>Please ensure your CSV file has the following headers (case-sensitive):</p>
+            <ul style="list-style-type: disc; padding-left: 20px; margin-top: 10px;">
+                <li><b>Name</b></li>
+                <li><b>Phone</b></li>
+                <li><b>Address</b></li>
+                <li><b>Product</b></li>
+                <li><b>Prev. Company</b></li>
+                <li><b>Email or Second Phone</b></li>
+            </ul>
+            <p style="margin-top: 10px; color: var(--subtext);">
+                <small>Note: Any other columns will be imported as-is but might not be displayed in the main
+                    table.</small>
+            </p>
+        </div>
+        <div class="modal-actions">
+            <a href="/leads_template.csv" download="leads_template.csv" class="login-btn"
+                style="text-decoration: none; display: inline-flex; align-items: center; justify-content: center;"><i
+                    data-feather="download"></i> Download Template</a>
+            <button id="closeInfoModalBtn" class="login-btn secondary-btn"
+                onclick="document.getElementById('uploadInfoModal').style.display='none'"><i data-feather="x"></i>
+                Close</button>
+        </div>
+    </div>
+</div>

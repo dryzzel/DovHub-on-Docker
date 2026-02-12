@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include('partials/head') %>
+
+  <body>
+    <button id="themeToggleBtn" class="theme-toggle" title="Toggle Dark Mode">🌙</button>
+    <div id="notification-container"></div>
+    <!-- 
+    PANTALLA DE LOGIN
+    Punto de entrada de la aplicación. Maneja la autenticación de usuarios (Admin y Agentes).
+  -->
+    <!-- LOGIN SCREEN -->
+    <%- include('partials/login') %>
+
+      <!-- 
+    PANTALLA PRINCIPAL (AGENTES)
+    Interfaz de trabajo para los agentes. Contiene:
+    - Panel Izquierdo: Navegación, estadísticas de sesión e historial.
+    - Panel Central: Visualización y gestión de leads.
+    - Panel Derecho: Filtros y lista de callbacks.
+  -->
+      <!-- AGENT SCREEN -->
+      <%- include('partials/agent/layout') %>
+
+        <!-- 
+    PANTALLA DE ADMINISTRADOR
+    Dashboard completo para la gestión del call center. Incluye:
+    - Métricas Globales y de RingCentral.
+    - Gestión de Usuarios (Crear, Editar, Eliminar).
+    - Gestión de Leads (Subida, Asignación, Filtrado).
+  -->
+        <!-- ADMIN SCREEN -->
+        <%- include('partials/admin/layout') %>
+
+          <!-- MODALS -->
+          <%- include('partials/modals/delete_options') %>
+            <%- include('partials/modals/password_confirm') %>
+              <%- include('partials/modals/duplicate_preview') %>
+                <%- include('partials/modals/admin_edit_lead') %>
+                  <%- include('partials/modals/edit_user') %>
+                    <%- include('partials/modals/agent_profile') %>
+                      <%- include('partials/modals/lead_history') %>
+                        <%- include('partials/modals/pending_callbacks') %>
+                          <%- include('partials/modals/export_summary') %>
+                            <%- include('partials/modals/lead_form') %>
+                              <%- include('partials/modals/upload_info') %>
+                                <%- include('partials/modals/custom_rows') %>
+
+
+                                  <%- include('partials/scripts') %>
+  </body>
+
+</html>
